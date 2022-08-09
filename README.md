@@ -113,6 +113,21 @@ services:
 volumes:
   syno_data:
 ```
+######(within docker compose directory)
+```yaml - 
+version: "2.3"
+
+services:
+  synology-surveillance-api-motion-mqtt-gifs:
+    container_name: surveillance-api
+    hostname: surveillance-api
+    image: fabtesta/synology-surveillance-api-motion-mqtt-gifs:latest
+    restart: unless-stopped
+    volumes:
+      - ./config:/config
+      - ./data:/data
+      - ./gifs:/gifs
+```
 
 If you'd prefer to install dependencies yourself, you'll need:
 
